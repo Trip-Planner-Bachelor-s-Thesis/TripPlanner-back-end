@@ -49,7 +49,7 @@ namespace TripPlannerAPI.Controllers
             String[] splitStartTime = _trip.startTime.Split(":");
             DateTime dt = new DateTime(_trip.date.Year, _trip.date.Month, _trip.date.Day, int.Parse(splitStartTime[0]), int.Parse(splitStartTime[1]), 0, _trip.date.Kind);
 
-            var trip = new Trip { type = _trip.type, date = dt, creator = user, members = new List<User>(), waypoints = _trip.waypoints, description=_trip.description, distance = _trip.distance, totalTime = _trip.totalTime, creationDateTime=DateTime.Now };
+            var trip = new Trip { type = _trip.type, date = dt, creator = user, members = new List<User>(), waypoints = _trip.waypoints, Pins = _trip.pins, description=_trip.description, distance = _trip.distance, totalTime = _trip.totalTime, creationDateTime=DateTime.Now };
             trip.preferences = new List<Preference>();
             for (int i = 0; i < _trip.preferences.Count(); i++)
             {
